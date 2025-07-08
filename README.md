@@ -57,6 +57,11 @@ Exceptions.BookNotFoundException: Book not found with ISBN: 999-999
 	at Main.testBuyBook(Main.java:42)
 	at Main.main(Main.java:76)
 ```
+## Screenhots:
+![image](https://github.com/user-attachments/assets/28043b56-f151-4d07-afcb-4f850e99ad9b)
+![image](https://github.com/user-attachments/assets/29cc2ec6-ae31-4e84-884c-a8fc9285d673)
+
+
 ## How to Run
 1. **Compile the project:**
    Ensure you are in the project root directory and run:
