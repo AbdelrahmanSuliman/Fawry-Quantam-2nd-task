@@ -50,6 +50,9 @@ public class Inventory {
 
     public void buyBook(String ISBN, int quantity, String email, String address){
         Book book = books.get(ISBN);
+        if (quantity <= 0) {
+            throw new IllegalArgumentException("Quantity must be greater than 0");
+        }
         switch (book) {
             case null -> throw new BookNotFoundException(ISBN);
             case PaperBook paperBook -> {
@@ -62,6 +65,7 @@ public class Inventory {
             }
             case EBook eBook -> mailingService.handleMailing(eBook, email);
             default -> {
+                throw new RuntimeException("Book type not for sale");
             }
         }
         System.out.println("Paid amount: " + book.getPrice() * quantity);
