@@ -1,1 +1,48 @@
 # Fawry-Quantam-2nd-task
+
+## Overview
+This Java project implements a simple Book Inventory Management System, supporting both physical (paper) and electronic (eBook) books. It allows adding, buying, and removing books from inventory, with custom exception handling and basic service stubs for shipping and mailing. The project is structured for clarity and extensibility, suitable for internship or educational purposes.
+
+## Features
+- Add books (with unique ISBN enforcement)
+- Buy books (with stock management for paper books and email delivery for eBooks)
+- Remove outdated books based on publication year
+- Custom exceptions for error handling (duplicate ISBN, out-of-stock, book not found)
+- Service stubs for shipping (paper books) and mailing (eBooks)
+
+## Project Structure
+```
+Classes/
+  Book.java           # Base class for all books
+  PaperBook.java      # Represents a physical book with stock
+  EBook.java          # Represents an electronic book with file type
+  Inventory.java      # Manages the collection of books and operations
+  DemoBook.java       # Example subclass for demonstration
+Enums/
+  FileType.java       # Enum for eBook file types (JPEG, PNG, PDF)
+Exceptions/
+  BookNotFoundException.java   # Thrown when a book is not found
+  DuplicateIsbnException.java  # Thrown when adding a book with an existing ISBN
+  OutOfStockException.java     # Thrown when requested quantity exceeds stock
+services/
+  MailingService.java  # Stub for handling eBook delivery
+  ShippingService.java # Stub for handling paper book shipping
+Main.java              # Entry point with test scenarios
+```
+
+## How to Run
+1. **Compile the project:**
+   Ensure you are in the project root directory and run:
+   ```sh
+   javac Classes/*.java Enums/*.java Exceptions/*.java services/*.java Main.java
+   ```
+2. **Run the main class:**
+   ```sh
+   java Main
+   ```
+   This will execute test scenarios for adding, buying, and removing books, demonstrating exception handling and service calls.
+
+## Exception Handling
+- **DuplicateIsbnException:** Thrown when attempting to add a book with an ISBN that already exists in the inventory.
+- **BookNotFoundException:** Thrown when trying to buy a book that does not exist in the inventory.
+- **OutOfStockException:** Thrown when the requested quantity of a paper book exceeds available stock.
