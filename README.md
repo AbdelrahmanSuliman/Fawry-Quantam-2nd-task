@@ -28,7 +28,35 @@ services/
   ShippingService.java # Stub for handling paper book shipping
 Main.java              # Entry point with test scenarios
 ```
-
+## Output: 
+```java
+Testing addBook
+Book added to Inventory
+Testing buyBook
+Book added to Inventory
+Exceptions.DuplicateIsbnException: ISBN already exists: 123-321
+	at Classes.Inventory.addBook(Inventory.java:24)
+	at Main.testAddBook(Main.java:17)
+	at Main.main(Main.java:74)
+Paid amount: 59.849999999999994
+Testing removeBook
+Book added to Inventory
+Book added to Inventory
+Book added to Inventory
+No books are older than 30 years
+Removed books:
+Example title
+Example title
+Example title
+Exceptions.OutOfStockException: Book with isbn 123-321 is out of stock, requested amount: 1 available amount: 0
+	at Classes.Inventory.buyBook(Inventory.java:60)
+	at Main.testBuyBook(Main.java:35)
+	at Main.main(Main.java:76)
+Exceptions.BookNotFoundException: Book not found with ISBN: 999-999
+	at Classes.Inventory.buyBook(Inventory.java:57)
+	at Main.testBuyBook(Main.java:42)
+	at Main.main(Main.java:76)
+```
 ## How to Run
 1. **Compile the project:**
    Ensure you are in the project root directory and run:
