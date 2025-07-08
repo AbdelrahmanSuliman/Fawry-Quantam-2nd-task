@@ -8,7 +8,6 @@ This Java project implements a simple Book Inventory Management System, supporti
 - Buy books (with stock management for paper books and email delivery for eBooks)
 - Remove outdated books based on publication year
 - Custom exceptions for error handling (duplicate ISBN, out-of-stock, book not found)
-- Service stubs for shipping (paper books) and mailing (eBooks)
 
 ## Project Structure
 ```
